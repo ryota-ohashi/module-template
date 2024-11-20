@@ -1,0 +1,20 @@
+@use "../2_tools/mq" as *;
+
+:root {
+	--white-color: #fff;
+	--navy-color: #3b3b3b;
+	--blue-color: #000;
+	--gray-color: #E0E0E0;
+}
+
+
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+	color: var(--base-text-color);
+	font-size: 14px;
+	line-height: 1.5;
+
+	@include mq(md) {
+		font-size: 16px;
+	}
+}

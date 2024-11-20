@@ -1,0 +1,125 @@
+@use "../2_tools/mq" as *;
+@use "../2_tools/hover" as *;
+
+.l-header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--white-color);
+	color: var(--blue-color);
+	border-bottom: 1px solid var(--blue-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	font-weight: bold;
+	font-family: 'Hind', sans-serif;
+	z-index: 9999;
+	@include mq(md) {
+		display: grid;
+		grid-template-columns: auto 1fr;
+	}
+	&_logo{
+
+		&-link{
+			display: block;
+			padding-top: 5px;
+			font-size: 36px;
+			@extend %hover;
+		}
+	}
+	&_gnav{
+		position: fixed;
+		top: 80px;
+		left: 0;
+		width: 100%;
+		background-color: var(--white-color);
+		transform: translateX(100%);
+		transition: transform 0.3s ease-in-out;
+		@include mq(md) {
+			position: static;
+			transform: translateX(0);
+		}
+		&-list{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 20px;
+			height: calc(100dvh - 80px);
+			padding-top: 80px;
+			font-size: 28px;
+
+			@include mq(md) {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+				height: auto;
+				padding-top: 0;
+				gap: 10px;
+				font-size: 18px;
+			}
+			@include mq(lg) {
+				gap: 20px;
+			}
+		}
+		&-link{
+			@include mq(md) {
+				padding: 5px 10px;
+			}
+			@include mq(lg) {
+				padding: 5px 20px;
+			}
+			@extend %hover;
+		}
+	}
+	&_sp-menu{
+		display: block;
+		width: 30px;
+		height: 30px;
+		position: relative;
+		@include mq(md) {
+			display: none;
+		}
+		& span{
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: var(--blue-color);
+			position: absolute;
+			transition: transform 0.3s ease-in-out;
+			&:nth-child(1){
+				top: 5px;
+			}
+			&:nth-child(2){
+				top: 15px;
+			}
+			&:nth-child(3){
+				top: 25px;
+			}
+		}
+	}
+}
+
+.is-open{
+	& .l-header{
+		&_sp-menu{
+			span{
+				&:nth-child(1){
+					top: 15px;
+					transform: rotate(45deg);
+				}
+				&:nth-child(2){
+					opacity: 0;
+				}
+				&:nth-child(3){
+					top: 15px;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+		&_gnav{
+			transform: translateX(0);
+		}
+	}
+}

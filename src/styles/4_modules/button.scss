@@ -1,0 +1,23 @@
+@use "../2_tools/mq" as *;
+@use "../2_tools/hover" as *;
+
+.m-button {
+  width: 90%;
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 10px 0;
+  font-size: 14px;
+  background-color: var(--blue-color);
+  border-radius: 30px;
+  border: 1px solid var(--blue-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  font-weight: bold;
+  @extend %hover;
+  @include mq(md) {
+    max-width: 300px;
+    font-size: 20px;
+  }
+}

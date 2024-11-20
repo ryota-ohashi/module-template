@@ -1,0 +1,40 @@
+@use "../2_tools/mq" as *;
+@use "../2_tools/hover" as *;
+
+.m-tab {
+	&_list {
+		display: flex;
+    transform: translateY(1px);
+	}
+
+	&_item {
+		padding: 8px 16px;
+		border: 1px solid var(--navy-color);
+		cursor: pointer;
+		transition: all 0.3s;
+
+		&:first-child {
+			border-radius: 8px 0 0 0;
+		}
+
+		&:last-child {
+			border-radius: 0 8px 0 0;
+		}
+
+		&.is-tab-active {
+			background-color: var(--navy-color);
+			color: #fff;
+		}
+	}
+
+	&_content {
+		display: none;
+		border: 1px solid var(--navy-color);
+		border-radius: 0 8px 8px 8px;
+    padding: 20px;
+
+		&.is-tab-show {
+			display: block;
+		}
+	}
+}

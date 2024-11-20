@@ -1,0 +1,191 @@
+---
+title: タイトル
+description: 説明
+keywords: キーワード,キーワード,キーワード,キーワード,キーワード
+og_title: タイトル
+og_description: 説明
+url: https://example.com/
+category: top
+---
+{% extends '../includes/layouts/base.njk' %}
+{% block js -%}
+	<!-- 個々のページ独自で読み込む場合 -->
+	<!-- <script defer src="/assets/js/other.js"></script> -->
+{%- endblock %}
+
+{% block content -%}
+{% include '../includes/components/header.njk' %}
+
+<main class="l-main">
+	<section class="kv">
+		<div class="kv_inner">
+			<h1 class="kv_title"><span class="js-kv-slide-in">キャッチコピーを<br>ここに記載する</span></h1>
+			<div class="kv_img_wrap kv_img_wrap--1">
+				<img src="/assets/img/kv1.jpg" alt="" class="kv_img kv_img--1 js-kv-slide-in">
+			</div>
+		</div>
+		<div class="kv_inner">
+			<div class="kv_img_wrap kv_img_wrap--2">
+				<img src="/assets/img/kv2.jpg" alt="" class="kv_img kv_img--2 js-kv-slide-in">
+			</div>
+			<h2 class="kv_sub_title"><span class="js-kv-slide-in">ここにサブタイトルや詳細なコンセプトなどをを記載する。ここにサブタイトルや詳細なコンセプトなどをを記載する。ここにサブタイトルや詳細なコンセプトなどをを記載する。ここにサブタイトルや詳細なコンセプトなどをを記載する。</span></h2>
+		</div>
+	</section>
+
+	<section class="section topics">
+		<h2 class="hdg2">TOPICS</h2>
+		<div class="topics_slider m-slider js-carousel">
+			<ul class="m-slider_list keen-slider">
+				<li class="m-slider_item keen-slider__slide">
+					<a href="#">
+						<img src="https://placehold.jp/250x150.png" alt="">
+						<p class="m-slider_date">2024.11.16</p>
+						<p class="m-slider_desc">説明説明説明説明説明説明</p>
+					</a>
+				</li>
+				<li class="m-slider_item keen-slider__slide">
+					<a href="#">
+						<img src="https://placehold.jp/3d4070/ffffff/250x150.png" alt="">
+						<p class="m-slider_date">2024.11.17</p>
+						<p class="m-slider_desc">説明説明説明説明説明説明</p>
+					</a>
+				</li>
+				<li class="m-slider_item keen-slider__slide	">
+					<a href="#">
+						<img src="https://placehold.jp/fcb131/ffffff/250x150.png" alt="">
+						<p class="m-slider_date">2024.11.18</p>
+						<p class="m-slider_desc">説明説明説明説明説明説明</p>
+					</a>
+				</li>
+				<li class="m-slider_item keen-slider__slide">
+					<a href="#">
+						<img src="https://placehold.jp/ff0000/ffffff/250x150.png" alt="">
+						<p class="m-slider_date">2024.11.19</p>
+						<p class="m-slider_desc">説明説明説明説明説明説明</p>
+					</a>
+				</li>
+			</ul>
+			<button class="m-slider_btn m-slider_btn--prev js-carousel-prev">
+				<span class="m-slider_btn_arrow"></span>
+			</button>
+			<button class="m-slider_btn m-slider_btn--next js-carousel-next">
+				<span class="m-slider_btn_arrow"></span>
+			</button>
+		</div>
+	</section>
+
+	<section class="section company">
+		<div class="cols2">
+			<div class="cols2_left">
+				<h2 class="hdg2">COMPANY</h2>
+			</div>
+			<div class="cols2_right">
+				<h3 class="hdg3">会社のコンセプトをここに記載する。</h3>
+				<p class="text">会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。会社コンセプトの説明をここに記載する。製品については<a href="#production" class="m-text-link js-anchor-link">こちら</a>から。</p>
+				<a href="" class="m-link-more">
+					<span class="m-link-more_arrow"></span>
+					<span class="m-link-more_text">MORE</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section production" id="production">
+		<div class="cols2">
+			<div class="cols2_left">
+				<h2 class="hdg2">PRODUCTION</h2>
+			</div>
+			<div class="cols2_right">
+				<h3 class="hdg3">製品一覧</h3>
+				<div class="m-tab js-tab">
+					<ul class="m-tab_list">
+						<li class="m-tab_item js-tab-list is-tab-active">製品A</li>
+						<li class="m-tab_item js-tab-list">製品B</li>
+						<li class="m-tab_item js-tab-list">製品C</li>
+					</ul>
+					<div class="m-tab_content js-tab-content is-tab-show">
+						<p class="text">製品Aの説明をここに記載する。製品Aの説明をここに記載する。製品Aの説明をここに記載する。製品Aの説明をここに記載する。製品Aの説明をここに記載する。</p>
+					</div>
+					<div class="m-tab_content js-tab-content">
+						<p class="text">製品Bの説明をここに記載する。製品Bの説明をここに記載する。製品Bの説明をここに記載する。製品Bの説明をここに記載する。製品Bの説明をここに記載する。</p>
+					</div>
+					<div class="m-tab_content js-tab-content">
+						<p class="text">製品Cの説明をここに記載する。製品Cの説明をここに記載する。製品Cの説明をここに記載する。製品Cの説明をここに記載する。製品Cの説明をここに記載する。</p>
+					</div>
+				</div>
+				<a href="" class="m-link-more">
+					<span class="m-link-more_arrow"></span>
+					<span class="m-link-more_text">MORE</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section faq">
+		<div class="cols2">
+			<div class="cols2_left">
+				<h2 class="hdg2">FAQ</h2>
+			</div>
+			<div class="cols2_right">
+				<ul class="m-accordion_list js-accordion">
+					<li class="m-accordion_item">
+						<div class="m-accordion_head js-accordion-trigger">
+							<p class="m-accordion_q">よくある質問をここに記載する</p>
+							<span class="m-accordion_toggle"></span>
+						</div>
+						<div class="m-accordion_body js-accordion-content">
+							<p class="m-accordion_a">回答をここに記載する。回答をここに記載する。回答をここに記載する。回答をここに記載する。</p>
+						</div>
+					</li>
+					<li class="m-accordion_item">
+						<div class="m-accordion_head js-accordion-trigger">
+							<p class="m-accordion_q">よくある質問をここに記載する</p>
+							<span class="m-accordion_toggle"></span>
+						</div>
+						<div class="m-accordion_body js-accordion-content">
+							<p class="m-accordion_a">回答をここに記載する。回答をここに記載する。回答をここに記載する。回答をここに記載する。</p>
+						</div>
+					</li>
+					<li class="m-accordion_item">
+						<div class="m-accordion_head js-accordion-trigger">
+							<p class="m-accordion_q">よくある質問をここに記載する</p>
+							<span class="m-accordion_toggle"></span>
+						</div>
+						<div class="m-accordion_body js-accordion-content">
+							<p class="m-accordion_a">回答をここに記載する。回答をここに記載する。回答をここに記載する。回答をここに記載する。</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section contact">
+		<h2 class="hdg2 u-text-center">CONTACT</h2>
+		<p class="text-base u-text-center u-mt-5">お問い合わせフォームをここに記載する。お問い合わせフォームをここに記載する。お問い合わせフォームをここに記載する。お問い合わせフォームをここに記載する。お問い合わせフォームをここに記載する。お問い合わせフォームをここに記載する。お問い合わせフォームをここに記載する。お問い合わせフォームをここに記載する。</p>
+		<button class="m-button u-mt-5 js-modal-open">モーダルボタン</button>
+	</section>
+
+</main>
+
+
+{% include '../includes/components/footer.njk' %}
+{%- endblock %}
+{% block modal %}
+<div class="m-modal js-modal">
+	<div class="m-modal_overlay js-modal-close"></div>
+	<div class="m-modal_content">
+		<div class="m-modal_inner">
+			<button class="m-modal_close js-modal-close">
+				<span></span>
+				<span></span>
+			</button>
+			<div class="m-modal_body">
+				<h3 class="m-modal_title">モーダルタイトル</h3>
+				<p class="m-modal_text">モーダルの内容をここに記載する。モーダルの内容をここに記載する。モーダルの内容をここに記載する。モーダルの内容をここに記載する。</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

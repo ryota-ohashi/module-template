@@ -1,0 +1,32 @@
+// base
+@use "1_base/reset.scss";
+@use "1_base/base.scss";
+
+// layouts
+@use "3_layouts/breadcrumb";
+@use "3_layouts/footer";
+@use "3_layouts/global-header";
+@use "3_layouts/main-contents";
+
+// modules
+@use "4_modules/hdg";
+@use "4_modules/text";
+@use "4_modules/slider";
+@use "4_modules/section";
+@use "4_modules/link";
+@use "4_modules/accordion";
+@use "4_modules/tabMenu";
+@use "4_modules/modal";
+@use "4_modules/button";
+
+// theme
+@use "5_theme/section-theme";
+
+// pages
+@use "6_pages/top";
+@use "6_pages/about";
+
+// utility
+@use "tailwindcss/base" as *;
+@use "tailwindcss/components" as *;
+@use "tailwindcss/utilities" as *;

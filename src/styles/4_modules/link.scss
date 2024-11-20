@@ -1,0 +1,47 @@
+@use "../2_tools/mq" as *;
+@use "../2_tools/hover" as *;
+
+.m-link{
+  &-more{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    @extend %hover;
+    &_arrow{
+      position: relative;
+      width: 40px;
+      height: 40px;
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        display: block;
+      }
+      &::before{
+        width: 40px;
+        height: 40px;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        border: 1px solid var(--blue-color);
+      }
+      &::after{
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        left: 50%;
+        border-top: 2px solid var(--blue-color);
+        border-right: 2px solid var(--blue-color);
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+    &_text{
+      color: var(--blue-color);
+      font-weight: bold;
+    }
+  }
+}
+
+.m-text-link{
+  @extend %hover;
+  text-decoration: underline;
+}

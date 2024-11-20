@@ -1,0 +1,88 @@
+@use "../2_tools/mq" as *;
+@use "../2_tools/hover" as *;
+
+.m-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+
+  &_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  &_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  &_inner {
+    position: relative;
+    padding: 40px 20px;
+    @include mq(md) {
+      padding: 60px 40px;
+    }
+  }
+
+  &_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    @extend %hover;
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background: #333;
+
+      &:first-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:last-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &_body {
+    text-align: center;
+  }
+
+  &_title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &_text {
+    line-height: 1.8;
+  }
+}
+
+.is-modal-open {
+  overflow: hidden;
+
+  .m-modal {
+    display: block;
+  }
+}

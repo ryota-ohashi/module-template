@@ -1,0 +1,135 @@
+@use "../2_tools/mq" as *;
+@use "../2_tools/hover" as *;
+
+[data-page-category="top"]{
+
+	.kv{
+		width: 100%;
+		&_inner{
+			display: flex;
+			flex-direction: column;
+			@include mq(md) {
+				align-items: center;
+				flex-direction: row;
+			}
+			& + .kv{
+				&_inner{
+					flex-direction: row;
+					align-items: center;
+				}
+			}
+		}
+		&_title{
+			width: 60%;
+			font-size: calc(80 / 1440 * 100vw);
+			font-weight: bold;
+			color: var(--navy-color);
+			margin-bottom: 20px;
+			overflow: hidden;
+			@include mq(md) {
+				margin-bottom: 0px;
+			}
+			& span{
+				display: block;
+				transform: translateX(100%);
+				will-change: transform;
+				transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+				&.is-show{
+					transform: translateX(0);
+				}
+			}
+		}
+		&_sub_title{
+			width: 75%;
+			font-weight: bold;
+			font-size: calc(14 / 375 * 100vw);
+			color: var(--navy-color);
+			padding-left: 40px;
+			overflow: hidden;
+			@include mq(md) {
+				width: 40%;
+				font-size: calc(20 / 1440 * 100vw);
+			}
+			& span{
+				display: block;
+				transform: translateX(-100%);
+				will-change: transform;
+				transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+				&.is-show{
+					transform: translateX(0);
+				}
+			}
+		}
+		&_img_wrap{
+			overflow: hidden;
+			&--1{
+				width: 75%;
+				margin-left: auto;
+				@include mq(md) {
+					width: 40%;
+				}
+			}
+			&--2{
+				width: 25%;
+				@include mq(md) {
+					width: 60%;
+				}
+			}
+		}
+		&_img{
+			width: 100%;
+			object-fit: cover;
+			transform: translateX(-100%);
+			will-change: transform;
+			&--1{
+				transform: translateX(-100%);
+			}
+			&--2{
+				transform: translateX(100%);
+				height: 250px;
+				@include mq(md) {
+					height: auto;
+				}
+			}
+
+			&.is-show{
+				transform: translateX(0);
+				transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+			}
+		}
+	}
+
+	.topics{
+		@include mq(md) {
+			width: 100%;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		&_slider{
+			margin: 20px auto 0;
+			max-width: calc(100% - 60px);
+			@include mq(md) {
+				max-width: 100%;
+			}
+		}
+	}
+
+	.cols2{
+		@include mq(md) {
+			display: grid;
+			grid-template-columns: 200px 1fr;
+			gap: 20px;
+		}
+		&_left{
+			margin-bottom: 10px;
+			@include mq(md) {
+				margin-bottom: 0;
+			}
+		}
+		&_right{
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+		}
+	}
+}

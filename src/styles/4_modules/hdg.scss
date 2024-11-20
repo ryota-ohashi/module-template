@@ -1,0 +1,30 @@
+
+@use "../2_tools/mq" as *;
+@use "../2_tools/hover" as *;
+
+.hdg1 {
+	font-weight: bold;
+	color: var(--blue-color);
+	font-size: 28px;
+	@include mq(md) {
+		font-size: 32px;
+	}
+}
+
+.hdg2 {
+	font-weight: bold;
+	color: var(--blue-color);
+	font-size: 24px;
+	@include mq(md) {
+		font-size: 24px;
+	}
+}
+
+.hdg3 {
+	font-weight: bold;
+	color: var(--navy-color);
+	font-size: 18px;
+	@include mq(md) {
+		font-size: 20px;
+	}
+}

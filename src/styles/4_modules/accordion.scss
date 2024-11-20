@@ -1,0 +1,87 @@
+@use "../2_tools/mq" as *;
+@use "../2_tools/hover" as *;
+
+.m-accordion{
+  &_list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_item{
+    border: 1px solid var(--gray-color);
+    border-radius: 30px;
+  }
+  &_head{
+    padding: 20px 20px 20px 50px;
+    position: relative;
+    @extend %hover;
+    cursor: pointer;
+    &::before{
+      content: "Q";
+      display: block;
+      color: var(--blue-color);
+      font-size: 20px;
+      font-weight: 700;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &.is-active{
+      & .m-accordion_toggle{
+        &::after{
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+      }
+    }
+  }
+  &_toggle{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--blue-color);
+    &::before, &::after{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 15px;
+      height: 2px;
+      top: 50%;
+      left: 50%;
+      background-color: var(--white-color);
+    }
+    &::before{
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    &::after{
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: transform 0.3s ease;
+    }
+  }
+  &_body{
+    height: 0;
+    overflow-y: hidden;
+  }
+  &_q{
+    padding-right: 50px;
+  }
+  &_a{
+    padding: 0 50px 20px 50px;
+    position: relative;
+    &::before{
+      content: "A";
+      display: block;
+      color: var(--blue-color);
+      font-size: 20px;
+      font-weight: 700;
+      position: absolute;
+      left: 21px;
+      top: -2px;
+    }
+  }
+}

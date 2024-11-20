@@ -1,0 +1,50 @@
+@use "sass:meta";
+@use "sass:map";
+
+$breakpoints: (
+  xs: 320px,
+  sm: 375px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px,
+) !default;
+
+@mixin mq($from: false, $until: false) {
+  $min-width: 0;
+  $max-width: 0;
+  $media-query: '';
+
+  // From: この値以上
+  @if $from {
+    @if map.has-key($breakpoints, $from) {
+      $min-width: map.get($breakpoints, $from);
+    } @else {
+      $min-width: $from;
+    }
+  }
+
+  // Until: この値未満
+  @if $until {
+    @if map.has-key($breakpoints, $until) {
+      $max-width: map.get($breakpoints, $until);
+    } @else {
+      $max-width: $until;
+    }
+  }
+
+  @if $min-width != 0 and $max-width != 0 {
+    @media screen and (min-width: #{$min-width}) and (max-width: #{$max-width - 1}) {
+      @content;
+    }
+  } @else if $min-width != 0 {
+    @media screen and (min-width: #{$min-width}) {
+      @content;
+    }
+  } @else if $max-width != 0 {
+    @media screen and (max-width: #{$max-width - 1}) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
