@@ -1,7 +1,7 @@
 const fs = require("fs");
 const beautify = require("js-beautify");
 
-const targetDir = "public";
+const targetDir = "docs";
 
 const beautifyOptions = {
 	indent_size: 2,

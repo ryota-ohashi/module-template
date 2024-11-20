@@ -9,10 +9,10 @@ module.exports = (eleventyConfig) => {
 	if (process.env.ELEVENTY_ENV !== 'production') {
 		eleventyConfig.setBrowserSyncConfig({
 			server: {
-				baseDir: 'public'
+				baseDir: 'docs'
 			},
 			files: [
-				'public/**/*',
+				'docs/**/*',
 				'src/site/**/*.njk',
 				'src/styles/**/*.scss',
 				'src/scripts/**/*.js'
@@ -36,7 +36,7 @@ module.exports = (eleventyConfig) => {
 			includes: "../inc",
 			layouts: "../inc/layouts",
 			data: "../data",
-			output: "public",
+			output: "docs",
 		},
 		dataTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
