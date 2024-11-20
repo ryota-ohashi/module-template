@@ -5,7 +5,7 @@ export default defineConfig(({ command }) => {
   const config = {
     root: 'src',
     build: {
-      outDir: '../public',
+      outDir: '../docs',
       emptyOutDir: true,
       rollupOptions: {
         input: {
